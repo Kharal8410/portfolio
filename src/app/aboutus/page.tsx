@@ -2,17 +2,11 @@
 "use client";
 
 import Image from "next/image";
+import SlideUp from "@/components/SlideUp";
 
 const AboutSection = () => {
-  // const handleIconClick = () => {
-  //   window.scrollTo({
-  //     top: 1000,
-  //     behavior: "smooth",
-  //   });
-  // };
-
   return (
-    <>
+    <SlideUp offset="-300px 0px -300px 0px">
       <div className="my-12 p-4 md:pt-16 md:pb-48">
         <h1 className="text-center font-bold text-5xl bg-gradient-to-br from-slate-600 to-orange-500 bg-clip-text text-transparent">
           About Me
@@ -79,7 +73,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </>
+    </SlideUp>
   );
 };
 
