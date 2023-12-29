@@ -82,21 +82,23 @@ function Navbar() {
                 );
               })}
 
-              {currentTheme === "dark" ? (
-                <button
-                  onClick={() => setTheme("light")}
-                  className="bg-slate-100 p-2 rounded-xl"
-                >
-                  <RiSunLine size={25} color="black" />
-                </button>
-              ) : (
-                <button
-                  onClick={() => setTheme("dark")}
-                  className="bg-slate-100 p-2 rounded-xl"
-                >
-                  <RiMoonFill size={25} />
-                </button>
-              )}
+              <button
+                onClick={() =>
+                  setTheme(currentTheme === "dark" ? "light" : "dark")
+                }
+                className="p-2 rounded-xl"
+                style={{
+                  border: "none",
+                  background: "none",
+                  cursor: "pointer",
+                }}
+              >
+                {currentTheme === "dark" ? (
+                  <RiSunLine size={20} color="white" />
+                ) : (
+                  <RiMoonFill size={20} />
+                )}
+              </button>
             </div>
           </div>
         </div>

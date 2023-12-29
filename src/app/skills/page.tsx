@@ -17,8 +17,7 @@ const skills = [
   {
     title: "JavaScript",
     logo: "/javascript.svg",
-    description:
-      "Extensive experience in client-side scripting with JavaScript.",
+    description: "Experience in client-side scripting with JavaScript.",
   },
   {
     title: "TypeScript",
@@ -47,8 +46,7 @@ const skills = [
   {
     title: "Git",
     logo: "/git.svg",
-    description:
-      "Proficient in version control using Git for efficient collaboration and code management.",
+    description: "Proficient in version control using Git for code management.",
   },
   {
     title: "GitHub",
@@ -59,16 +57,15 @@ const skills = [
   {
     title: "Next.js",
     logo: "/nextjs.svg",
-    description:
-      "Knowledgeable in building powerful and scalable web applications with Next.js.",
+    description: "Knowledgeable in building web applications with Next.js.",
   },
 ];
 
 const Skills = () => {
-  const [isPopoverVisible, setPopoverVisibility] = useState(null);
+  const [activePopover, setActivePopover] = useState(null);
 
   const togglePopover = (idx: any) => {
-    setPopoverVisibility(isPopoverVisible === idx ? null : idx);
+    setActivePopover((prev) => (prev === idx ? null : idx));
   };
 
   return (
@@ -78,59 +75,38 @@ const Skills = () => {
           My Skills
           <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
         </h1>
-        <p className="mx-auto md:w-2/4 my-14 p-1 text-center justify-center text-lg">
+        <p className="mx-auto md:w-2/4 my-14 p-1 text-center justify-center text-lg ">
           As a <span className="text-teal-500">frontend developer</span>,
           possessing skills in HTML5, CSS3, JavaScript, TypeScript, React,
           Tailwind CSS, Bootstrap, Git, GitHub, and Next.js enables proficiency
           in building structured, responsive, and dynamic user interfaces with
           efficient styling and version control management.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-8 justify-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-8 justify-center max-w-6xl mx-auto ">
           {skills.map((item, idx) => (
             <div
               key={idx}
               className="group transition-transform duration-500 transform hover:scale-105"
             >
               <div
-                className="flex flex-col items-center mx-2 gap-4"
+                className="flex flex-col items-center mx-2 m-6 relative"
                 onMouseEnter={() => togglePopover(idx)}
                 onMouseLeave={() => togglePopover(idx)}
               >
-                <div>
-                  <Image
-                    width={96}
-                    height={96}
-                    src={item.logo}
-                    alt="skill-icons"
-                    // className="sm:w-4 sm:h-4"
-                  />
-                </div>
-                <div
-                  className={`mt-2 absolute bottom-full left-1/2 transform -translate-x-1/2 text-center bg-none text-dark rounded py-2 px-4 ${
-                    isPopoverVisible === idx ? "opacity-100" : "opacity-0"
-                  } transition-opacity duration-500`}
-                >
-                  <div
-                    data-popover
-                    id={`popover-${idx}`}
-                    role="tooltip"
-                    className={`w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm ${
-                      isPopoverVisible === idx
-                        ? "opacity-100 visible"
-                        : "opacity-0 invisible"
-                    } dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800`}
-                  >
-                    <div className="px-3 py-2 bg-gray-100 border-b border-gray-200 rounded-t-lg dark:border-gray-600 dark:bg-gray-700">
-                      <h3 className="font-semibold text-gray-900 dark:text-white">
-                        {item.title}
-                      </h3>
-                    </div>
-                    <div className="px-3 py-2">
-                      <p>{item.description}</p>
-                    </div>
-                    <div data-popper-arrow></div>
+                <Image
+                  width={96}
+                  height={96}
+                  priority={true}
+                  src={item.logo}
+                  alt="skill-icons"
+                />
+
+                {activePopover === idx && (
+                  <div className="popover above-icons absolute -top-28 w-[14rem] rounded-xl border p-3 bg-teal-500">
+                    <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                    <p className="text-sm ">{item.description}</p>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           ))}

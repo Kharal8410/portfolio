@@ -22,21 +22,19 @@ const Home = () => {
         <div className="md:mt-2 md:w-2/5">
           <TypeAnimation
             sequence={[
-              "Hi, I'm Mukunda Kharal",
+              "Hi I'm Mukunda Kharal",
               1000,
-              "Hi, I'm Mukunda Kharal",
+              "Hi I'm Mukunda Kharal ",
               1000,
-              "Hi, I'm Mukunda Kharal",
+              " Hi I'm Mukunda Kharal",
+              1000,
+              "Hi I'm Mukunda Kharal",
               1000,
             ]}
             wrapper="span"
             speed={50}
-            style={{
-              fontSize: "3em",
-              display: "inline-block",
-            }}
             repeat={Infinity}
-            className="font-bold bg-gradient-to-br from-slate-600 to-orange-500 bg-clip-text text-transparent"
+            className="font-bold inline-block text-5xl bg-gradient-to-br from-slate-600 to-orange-500 bg-clip-text text-transparent"
           />
 
           <p className="text-2xl mt-4 mb-6 md:text-lg  ">
