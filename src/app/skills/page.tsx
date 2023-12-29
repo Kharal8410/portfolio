@@ -78,18 +78,18 @@ const Skills = () => {
           My Skills
           <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
         </h1>
-        <p className="mx-auto md:w-2/4 my-14 p-1  text-center justify-center text-lg">
+        <p className="mx-auto md:w-2/4 my-14 p-1 text-center justify-center text-lg">
           As a <span className="text-teal-500">frontend developer</span>,
           possessing skills in HTML5, CSS3, JavaScript, TypeScript, React,
           Tailwind CSS, Bootstrap, Git, GitHub, and Next.js enables proficiency
           in building structured, responsive, and dynamic user interfaces with
           efficient styling and version control management.
         </p>
-        <div className="flex flex-wrap justify-center max-w-6xl mx-auto ">
+        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-8 justify-center max-w-6xl mx-auto">
           {skills.map((item, idx) => (
             <div
               key={idx}
-              className="group w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-8 transition-transform duration-500 transform hover:scale-105"
+              className="group transition-transform duration-500 transform hover:scale-105"
             >
               <div
                 className="flex flex-col items-center mx-2 gap-4"
@@ -102,6 +102,7 @@ const Skills = () => {
                     height={96}
                     src={item.logo}
                     alt="skill-icons"
+                    // className="sm:w-4 sm:h-4"
                   />
                 </div>
                 <div

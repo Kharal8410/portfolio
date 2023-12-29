@@ -28,12 +28,11 @@ const AboutSection = () => {
           <div className="md:col-span-3 md:pr-8 text-lg md:w-2/3 mx-auto">
             {" "}
             <p className="text-justify mb-4 max-w-md md:max-w-full">
-              {" "}
               Hey there! I'm Mukunda Kharal, an aspiring{" "}
               <span className="text-teal-500">Frontend Developer</span>,
-              currently immersed in the dynamic world of IT. Pursuing my Bsc.IT
-              at ISMT College, Chitwan,
-              <span className="font-bold"> Sundarland University</span>, I'm
+              currently immersed in the dynamic world of IT. I am pursuing my
+              BSc.IT at ISMT College, Chitwan,
+              <span className="font-bold">Sunderland University</span>. I'm
               thrilled to embark on this exciting journey where technology and
               creativity collide.
             </p>

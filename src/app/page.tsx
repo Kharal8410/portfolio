@@ -21,11 +21,18 @@ const Home = () => {
 
         <div className="md:mt-2 md:w-2/5">
           <TypeAnimation
-            sequence={["Hi, it's me Mukunda Kharal", 1000]}
+            sequence={[
+              "Hi, I'm Mukunda Kharal",
+              1000,
+              "Hi, I'm Mukunda Kharal",
+              1000,
+              "Hi, I'm Mukunda Kharal",
+              1000,
+            ]}
             wrapper="span"
             speed={50}
             style={{
-              fontSize: "3rem",
+              fontSize: "3em",
               display: "inline-block",
             }}
             repeat={Infinity}
@@ -33,7 +40,7 @@ const Home = () => {
           />
 
           <p className="text-2xl mt-4 mb-6 md:text-lg  ">
-            I'am a highly ambitious, self-motivated, and driven{" "}
+            A highly ambitious, self-motivated, and driven{" "}
             <span className="font-semibold text-teal-600">
               FrontEnd Developer{" "}
             </span>
@@ -49,7 +56,7 @@ const Home = () => {
           </a>
 
           <a
-            href="/cv.pdf"
+            href="/CV_Mukunda_Kharal.pdf"
             download="mukunda-cv.pdf"
             className="text-neutral-100 font-semibold px-6 py-3 mx-2 rounded-lg transition bg-gradient-to-br from-slate-600 to-orange-500 hover:from-teal-700 hover:to-orange-600 hover:text-white"
           >
